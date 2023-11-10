@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15sp"
+    android:background="@drawable/background_recycle_event"
+    android:layout_margin="10sp"
+    android:layout_marginBottom="@dimen/sp10"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/sp10"
+        >
+        <TextView
+            android:background="@drawable/background_moment_rounded_medium"
+            android:textSize="15sp"
+            android:padding="6sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aujourd'hui"/>
+    </LinearLayout>
+
+
+    <GridLayout
+        android:columnCount="2"
+        android:layout_marginBottom="@dimen/sp10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="4sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_marginBottom="3sp"
+                android:textColor="#273746"
+                android:textSize="17sp"
+                android:text="@string/starttime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/recycler_event_start_time"
+                android:layout_marginStart="@dimen/sp10"
+                android:textColor="#273746"
+                android:textSize="16sp"
+                android:text="10:12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:padding="4sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="right"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3sp"
+                android:text="@string/endtime"
+                android:textColor="#273746"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/recycler_event_end_time"
+                android:layout_marginStart="@dimen/sp10"
+                android:textColor="#273746"
+                android:textSize="16sp"
+                android:text="17:12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </GridLayout>
+
+   <LinearLayout
+       android:gravity="center_horizontal"
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <LinearLayout
+           android:layout_marginRight="@dimen/sp10"
+           android:orientation="vertical"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+           <TextView
+               android:textSize="15sp"
+               android:textColor="@color/black"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/recycler_event_amount_expense"
+               android:layout_marginBottom="5sp"
+               />
+           <TextView
+               android:background="@drawable/background_light_rounded"
+               android:layout_width="wrap_content"
+               android:layout_marginStart="10sp"
+               android:padding="@dimen/sp10"
+               android:layout_height="wrap_content"
+               android:textColor="@color/color_danger"
+               android:text="5000 Fc"/>
+       </LinearLayout>
+
+       <LinearLayout
+           android:layout_marginRight="@dimen/sp10"
+           android:orientation="vertical"
+           android:background="@color/border_light"
+           android:layout_width="1sp"
+           android:layout_height="match_parent"/>
+
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+           <TextView
+               android:textSize="15sp"
+               android:textColor="@color/black"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/recycler_event_amount_recipe"
+               android:layout_marginBottom="5sp"
+               />
+           <TextView
+               android:background="@drawable/background_light_rounded"
+               android:layout_width="wrap_content"
+               android:layout_marginStart="10sp"
+               android:padding="@dimen/sp10"
+               android:layout_height="wrap_content"
+               android:textColor="@color/color_blue"
+               android:text="10000 Fc"/>
+       </LinearLayout>
+   </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="15sp"
+        android:layout_marginBottom="@dimen/sp10"
+        >
+        <Spinner
+            android:padding="4sp"
+            android:background="@drawable/background_moment_rounded_medium"
+            android:entries="@array/recyclerview_event_more"
+            android:spinnerMode="dropdown"
+            android:id="@+id/recycler_event_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+</LinearLayout>

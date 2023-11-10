@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="recyclerview_event_more">
+        <item>Editer</item>
+        <item>Supprimer</item>
+    </array>
+</resources>

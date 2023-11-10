@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Expense" parent="Theme.MaterialComponents.DayNight">
+        #AAB7B8
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorAccent">@color/primary_light</item>
+    </style>
+
+    <style name="Theme.Expense" parent="Base.Theme.Expense" />
+
+</resources>

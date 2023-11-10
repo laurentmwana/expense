@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">expense</string>
+    <string name="menu_event_title_add">Ajouter</string>
+    <string name="menu_item_event">Evenement</string>
+    <string name="menu_event_title_delete_all">Tous supprimer</string>
+    <string name="button_add">Ajouter</string>
+    <string name="recycler_event_title">Evenement</string>
+    <string name="starttime">Heure de début</string>
+    <string name="endtime">Heure de la fin</string>
+    <string name="recycler_event_amount_expense">Dépense journalière</string>
+    <string name="recycler_event_amount_recipe">Recette journalière</string>
+</resources>
