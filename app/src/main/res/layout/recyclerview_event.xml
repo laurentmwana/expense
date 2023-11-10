@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     android:padding="15sp"
     android:background="@drawable/background_recycle_event"
-    android:layout_margin="10sp"
     android:layout_marginBottom="@dimen/sp10"
     android:orientation="vertical">
 
@@ -17,13 +16,13 @@
         android:layout_marginBottom="@dimen/sp10"
         >
         <TextView
+            android:id="@+id/text_view_moment_event"
             android:background="@drawable/background_moment_rounded_medium"
             android:textSize="15sp"
             android:padding="6sp"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Aujourd'hui"/>
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 
@@ -47,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
-                android:id="@+id/recycler_event_start_time"
+                android:id="@+id/text_view_event_start_time"
                 android:layout_marginStart="@dimen/sp10"
                 android:textColor="#273746"
                 android:textSize="16sp"
@@ -71,7 +70,7 @@
                 android:textColor="#273746"
                 android:textSize="17sp" />
             <TextView
-                android:id="@+id/recycler_event_end_time"
+                android:id="@+id/text_view_event_end_time"
                 android:layout_marginStart="@dimen/sp10"
                 android:textColor="#273746"
                 android:textSize="16sp"
@@ -89,7 +88,7 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
        <LinearLayout
-           android:layout_marginRight="@dimen/sp10"
+           android:layout_marginEnd="@dimen/sp10"
            android:orientation="vertical"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content">
@@ -102,17 +101,18 @@
                android:layout_marginBottom="5sp"
                />
            <TextView
+               android:textAlignment="center"
+               android:layout_width="100sp"
+               android:id="@+id/text_view_event_amount_daily_expense"
                android:background="@drawable/background_light_rounded"
-               android:layout_width="wrap_content"
                android:layout_marginStart="10sp"
                android:padding="@dimen/sp10"
                android:layout_height="wrap_content"
-               android:textColor="@color/color_danger"
-               android:text="5000 Fc"/>
+               android:textColor="@color/color_danger"/>
        </LinearLayout>
 
        <LinearLayout
-           android:layout_marginRight="@dimen/sp10"
+           android:layout_marginEnd="@dimen/sp10"
            android:orientation="vertical"
            android:background="@color/border_light"
            android:layout_width="1sp"
@@ -131,13 +131,14 @@
                android:layout_marginBottom="5sp"
                />
            <TextView
+               android:textAlignment="center"
+               android:id="@+id/text_view_event_amount_daily_recipe"
                android:background="@drawable/background_light_rounded"
-               android:layout_width="wrap_content"
+               android:layout_width="100sp"
                android:layout_marginStart="10sp"
                android:padding="@dimen/sp10"
                android:layout_height="wrap_content"
-               android:textColor="@color/color_blue"
-               android:text="10000 Fc"/>
+               android:textColor="@color/color_blue"/>
        </LinearLayout>
    </LinearLayout>
 
@@ -150,11 +151,10 @@
         android:layout_marginBottom="@dimen/sp10"
         >
         <Spinner
-            android:padding="4sp"
-            android:background="@drawable/background_moment_rounded_medium"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:entries="@array/recyclerview_event_more"
             android:spinnerMode="dropdown"
-            android:id="@+id/recycler_event_more"
+            android:id="@+id/spinner_event_more_action"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />

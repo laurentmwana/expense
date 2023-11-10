@@ -64,7 +64,7 @@ public class EventRepository {
             Event e = (new Event())
                     .setId(cs.getInt(0))
                     .setStartTime(cs.getString(1))
-                    .setStartTime(cs.getString(2))
+                    .setEndTime(cs.getString(2))
                     .setAmountDailyRecipe(cs.getFloat(3))
                     .setAmountDailyExpense(cs.getFloat(4));
             ev.add(e);
