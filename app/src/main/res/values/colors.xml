@@ -2,9 +2,9 @@
 <resources>
     <color name="black">#283747</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary">#3498DB</color>
+    <color name="primary">#A9CCE3</color>
     <color name="primary_dark">#1F618D</color>
-    <color name="primary_light">#85C1E9</color>
+    <color name="primary_light">#D6EAF8</color>
     <color name="color_danger">#F44336</color>
     <color name="color_blue">#2196F3</color>
     <color name="color_gray">#F4F6F7</color>

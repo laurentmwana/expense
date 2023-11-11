@@ -7,7 +7,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.expense.Listeners.EventAdapterListener;
 import com.example.expense.R;
+import com.example.expense.controller.events.EventController;
 
 public class EventViewHolder extends RecyclerView.ViewHolder {
 
@@ -17,13 +19,16 @@ public class EventViewHolder extends RecyclerView.ViewHolder {
 
     public Spinner mSpinnerMoreAction;
 
-    private View view;
+    public EventController controller;
+
+    public View view;
 
 
-    public EventViewHolder(@NonNull View view) {
+    public EventViewHolder(@NonNull View view, EventController controller) {
         super(view);
 
         this.view = view;
+        this.controller = controller;
 
         // Define click listener for the ViewHolder's View
 
@@ -49,7 +54,8 @@ public class EventViewHolder extends RecyclerView.ViewHolder {
     }
 
     private void addListeners() {
-
+        // on recupère l'id(de la base de données) de l'élèment
+        mSpinnerMoreAction.setOnItemSelectedListener(new EventAdapterListener());
     }
 
 }

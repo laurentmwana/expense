@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import com.example.expense.R;
 import com.example.expense.adapters.CustomListEventAdapter;
 import com.example.expense.controller.events.EventController;
+import com.example.expense.helper.Flash;
 import com.example.expense.views.shared.SharedActionBar;
 import com.example.expense.views.shared.SharedMenuItem;
 
@@ -42,11 +43,16 @@ public class EventActivity extends AppCompatActivity {
 
         SharedActionBar.back(this, title);
 
-        // on initialise le controller
-        EventController controller = new EventController(this);
+        try {
+            // on initialise le controller
+            EventController controller = new EventController(this);
 
-        // on personnalise le RecyclerView
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_event);
-        recyclerView.setAdapter(new CustomListEventAdapter(this, controller.getFindAllEvent()));
+            // on personnalise le RecyclerView
+            RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_event);
+            recyclerView.setAdapter(new CustomListEventAdapter(this, controller));
+
+        }catch (Exception e) {
+            Flash.modal(this, e.getMessage());
+        }
     }
 }

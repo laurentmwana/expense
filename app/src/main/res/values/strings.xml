@@ -9,4 +9,8 @@
     <string name="endtime">Heure de la fin</string>
     <string name="recycler_event_amount_expense">Dépense journalière</string>
     <string name="recycler_event_amount_recipe">Recette journalière</string>
+    <string name="event_show_expense">Dépense</string>
+    <string name="event_show_recipe">Recette</string>
+    <string name="event_show_stat">Statistique</string>
+    <string name="event_show_action">Action effectuée</string>
 </resources>

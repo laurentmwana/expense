@@ -12,6 +12,10 @@ public class Event {
 
     private Float amountDailyExpense;
 
+    private String created_at;
+
+    private String updated_at;
+
     public int getId() {
         return id;
     }
@@ -60,6 +64,25 @@ public class Event {
 
     public Event setAmountDailyExpense(Float amountDailyExpense) {
         this.amountDailyExpense = amountDailyExpense;
+
+        return this;
+    }
+
+    public String getCreatedAt() {
+        return created_at;
+    }
+
+    public Event setCreatedAt(String created_at) {
+        this.created_at = created_at;
+
+        return this;
+    }
+    public String getUpdatedAt() {
+        return updated_at;
+    }
+
+    public Event setUpdatedAt(String updated_at) {
+        this.updated_at = updated_at;
 
         return this;
     }

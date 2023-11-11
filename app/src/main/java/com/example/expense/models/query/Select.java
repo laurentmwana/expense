@@ -19,7 +19,7 @@ public class Select {
 
     private String where = null;
 
-    private String[] args = {};
+    private String[] args = null;
 
     private final ArrayList<String> orderBy = new ArrayList<String>();
 
@@ -90,15 +90,23 @@ public class Select {
         return this;
     }
 
-    public Cursor push() {
+    public Select params(String... params) {
+
+        this.args = params;
+
+        return this;
+    }
+
+    public Cursor execute() {
 
         String selection = toWhere();
         String orders = toOrderBy();
-        String[] params = null == args ? null : args;
+        String[] params = args;
 
         return database.writable
                 .query(from, columns, selection, params, null, null, orders, limit);
     }
+
 
     private String toOrderBy() {
 

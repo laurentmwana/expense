@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="recyclerview_event_more">
+        <item> </item>
+        <item>En savoir plus</item>
         <item>Editer</item>
         <item>Supprimer</item>
     </array>

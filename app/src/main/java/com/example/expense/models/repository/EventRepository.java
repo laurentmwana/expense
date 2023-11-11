@@ -5,13 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 
 import com.example.expense.database.AppDatabase;
-import com.example.expense.models.QueryBuilder;
+import com.example.expense.exception.NotFoundException;
 import com.example.expense.models.entity.Event;
 import com.example.expense.models.query.Insert;
 import com.example.expense.models.query.Select;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class EventRepository {
 
@@ -20,7 +19,7 @@ public class EventRepository {
     private final AppDatabase database;
 
     private String[] columns = new String[]{
-            "id", "start_time", "end_time", "amount_daily_recipe", "amount_daily_expense", "created_at"};
+            "id", "start_time", "end_time", "amount_daily_recipe", "amount_daily_expense", "created_at", "updated_at"};
 
     public EventRepository(Context c) {
 
@@ -54,21 +53,46 @@ public class EventRepository {
                 .select(columns)
                 .orderBy("id", "DESC")
                 .orderBy("created_at", "DESC")
-                .push();
+                .execute();
 
         ArrayList<Event> ev = new ArrayList<Event>();
 
         // on fait l'hydratation
-        // pour avoir les données, comme des objets
+        // pour avoir les données sous forme d'objets
         while (cs.moveToNext()) {
-            Event e = (new Event())
-                    .setId(cs.getInt(0))
-                    .setStartTime(cs.getString(1))
-                    .setEndTime(cs.getString(2))
-                    .setAmountDailyRecipe(cs.getFloat(3))
-                    .setAmountDailyExpense(cs.getFloat(4));
-            ev.add(e);
+            ev.add(getHydrate(cs));
         }
         return ev;
+    }
+
+    public Event find(String id) throws NotFoundException {
+        // on recupère les données depuis la base de données qui repondent à la condition id = id
+        Cursor cs = (new Select(database))
+                .from(TABLE, null)
+                .select(columns)
+                .where("id = ?")
+                .params(id)
+                .limit(1)
+                .execute();
+        if (null == cs) {
+            throw new NotFoundException("nous n'avons pas trouvé l'évènement #" + id);
+        }
+        cs.moveToFirst();
+
+        return getHydrate(cs);
+    }
+
+
+    private Event getHydrate(Cursor cs) {
+
+        Event ev = new Event();
+        return  (ev)
+                .setId(cs.getInt(0))
+                .setStartTime(cs.getString(1))
+                .setEndTime(cs.getString(2))
+                .setAmountDailyRecipe(cs.getFloat(3))
+                .setAmountDailyExpense(cs.getFloat(4))
+                .setCreatedAt(cs.getString(5))
+                .setUpdatedAt(cs.getString(6));
     }
 }

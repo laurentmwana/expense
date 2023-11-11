@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <item
+        android:id="@+id/event_show_stat"
+        android:title="@string/event_show_stat"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/event_show_expense"
+        android:title="@string/event_show_expense"/>
+    <item
+        android:id="@+id/event_show_recipe"
+        android:title="@string/event_show_recipe"/>
+
+    <item
+        android:id="@+id/event_show_action"
+        android:title="@string/event_show_action"/>
+</menu>

@@ -13,13 +13,37 @@
         android:theme="@style/Theme.Expense"
         tools:targetApi="31">
         <activity
-            android:parentActivityName=".views.event.EventActivity"
-            android:name=".views.event.AddEventActivity"
+            android:parentActivityName=".views.event.show.ShowEventActivity"
+            android:name=".views.event.show.ShowActionActivity"
             android:exported="false" />
         <activity
-            android:parentActivityName=".views.MainActivity"
-            android:name=".views.event.EventActivity"
+            android:parentActivityName=".views.event.show.ShowEventActivity"
+            android:name=".views.event.show.ShowExpenseActivity"
             android:exported="false" />
+        <activity
+            android:name=".views.event.show.ShowStatisticActivity"
+            android:exported="false"
+            android:parentActivityName=".views.event.show.ShowEventActivity" />
+        <activity
+            android:parentActivityName=".views.event.show.ShowEventActivity"
+            android:name=".views.event.show.ShowRecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.event.UpdateEventActivity"
+            android:exported="false"
+            android:parentActivityName=".views.event.EventActivity" />
+        <activity
+            android:name=".views.event.show.ShowEventActivity"
+            android:exported="false"
+            android:parentActivityName=".views.event.EventActivity" />
+        <activity
+            android:name=".views.event.AddEventActivity"
+            android:exported="false"
+            android:parentActivityName=".views.event.EventActivity" />
+        <activity
+            android:name=".views.event.EventActivity"
+            android:exported="false"
+            android:parentActivityName=".views.MainActivity" />
         <activity
             android:name=".views.MainActivity"
             android:exported="true">
@@ -30,4 +54,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
